@@ -1,0 +1,32 @@
+
+<h1>Todo detail</h1>
+
+<!-- Form for the user to input the data -->
+<form method="post">
+    <div class="form-group">
+        <label for="id">ID:</label>
+        <input type="text" class="form-control" id="id" name="id" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" id="description" name="description" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Item</button>
+</form>
+
+<!-- Item added in display -->
+@if (ViewBag.AddedItem != null)
+{
+    <div class="alert alert-success mt-3" role="alert">
+        Item Added!
+        <ul>
+            <li>ID: @ViewBag.AddedItem.Id</li>
+            <li>Title: @ViewBag.AddedItem.Title</li>
+            <li>Description: @ViewBag.AddedItem.Description</li>
+        </ul>
+    </div>
+}
